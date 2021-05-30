@@ -22,25 +22,27 @@ public class App {
     {
         int i = 0, j = 0, k = 0;
      
-       if (istSortiert(a) && istSortiert(b)) {
+       if (istSortiert(a) && istSortiert(b)) {//prüft ob Arrays aufsteigend sortiert sind
         while (i<n1 && j <n2)
         {
-            // Check if current element of first
-            // array is smaller than current element
-            // of second array. If yes, store first
-            // array element and increment first array
-            // index. Otherwise do same with second array
+            /*
+            prüft ob das aktuelle Elemnt von das erste Array kleiner ist als das aktulle Element von
+            des zweiten Element das zweite Array.
+            Wenn ja, zuerst speichern und das Arrays index um eins inkrementieren.
+            Ansonsten mache dasselbe mit dem zwieten Array 
+        
+            */
             if (a[i] < b[j])
                 arr3[k++] = a[i++];
             else
                 arr3[k++] = b[j++];
         }
      
-        // Store remaining elements of first array
+        // Restliche Elemente des ersten Array in Merge Array speichern
         while (i < n1)
             arr3[k++] = a[i++];
      
-        // Store remaining elements of second array
+        // Restliche Elemente des zweiten Array in Merge Array speichern
         while (j < n2)
             arr3[k++] = b[j++];
 

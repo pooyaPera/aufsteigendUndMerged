@@ -1,28 +1,37 @@
+/*
+Änderungen:
+1- MegreArray Methode ist jetet eine separate Methode
+2- Merge verfahren ist zu der Bemerkung angepasst
 
+Grüße
+
+Pouya Yasavand
+*/
 
 public class App {
     public static void main(String[] args) throws Exception {
-        int [] a = {1,3,2};
-        int [] b = {2,4,6,8,10,12};
-       
-        int n1 = a.length;
-     
         
-        int n2 = b.length;
-     
-        int[] arr3 = new int[n1+n2];
-         
-        mergeArrays(a, b, n1, n2, arr3);
-     
+        int [] x = {1,3,5};
+        int [] y = {2,4,6,8,10,12};
 
-
+     
+        mergeArrays(x,y);
+    
     }
-    public static void mergeArrays(int[] a, int[] b, int n1,
-                                int n2, int[] arr3)
+    
+    
+    
+    
+    public static void mergeArrays(int[] a, int[] b)
+
     {
+
+        int n1 = a.length;
+        int n2 = b.length;
+        int [] merge = new int [n1+n2];
         int i = 0, j = 0, k = 0;
      
-       if (istSortiert(a) && istSortiert(b)) {//prüft ob Arrays aufsteigend sortiert sind
+       if (istSortiert(a) && istSortiert(b)) {//prüft ob Arrays aufsteigend sortiert sind.
         while (i<n1 && j <n2)
         {
             /*
@@ -33,27 +42,27 @@ public class App {
         
             */
             if (a[i] < b[j])
-                arr3[k++] = a[i++];
+                merge[k++] = a[i++];
             else
-                arr3[k++] = b[j++];
+                merge[k++] = b[j++];
         }
      
         // Restliche Elemente des ersten Array in Merge Array speichern
         while (i < n1)
-            arr3[k++] = a[i++];
+            merge[k++] = a[i++];
      
         // Restliche Elemente des zweiten Array in Merge Array speichern
         while (j < n2)
-            arr3[k++] = b[j++];
+            merge[k++] = b[j++];
 
         
-            System.out.println("Array after merging");
+            System.out.println("Array nach dem Zusammenfügen");// gibt das merge Array aus 
             for (int l=0; l < n1+n2; l++)
-                System.out.print(arr3[l] + " ");
+                System.out.print(merge[l] + " ");
     
     
     }else{
-        System.out.println("Array ist nicht Sortiert");
+        System.out.println("Array ist nicht Sortiert");//falls die Arrays nicht sortiert sind
     }
 }
 
